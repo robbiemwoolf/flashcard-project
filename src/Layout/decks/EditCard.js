@@ -52,17 +52,17 @@ export default function EditCard() {
     //Updates the card and returns to the deck details screen
     async function handleSubmit(card) {
         try {
-        await updateCard(card);
-        history.push(`/decks/${deckId}`);
-        } catch (err) {
-        throw err;
-        }
-    }
+            await updateCard(card);
+            history.push(`/decks/${deckId}`);
+        } catch (error) {
+            throw error;
+        };
+    };
 
     //Returns to the deck details screen
     function handleCancel() {
         history.push(`/decks/${deckId}`);
-    }
+    };
 
     return (
         <div>

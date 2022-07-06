@@ -6,11 +6,11 @@ export default function CardDetails({ id, front, back, deckId, deleteHandler }) 
   return (
     <div className='card my-1' key={id}>
       <div className='card-body'>
-        <div className='card-content'>
+        <div className='card-content d-flex'>
           <p className='card-text mx-2'>{front}</p>
           <p className='card-text mx-2'>{back}</p>
         </div>
-        <div className='card-buttons'>
+        <div className='d-flex justify-content-end'>
           <Link
             className='btn btn-secondary'
             to={`/decks/${deckId}/cards/${id}/edit`}

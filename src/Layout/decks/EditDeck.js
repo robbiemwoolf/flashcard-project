@@ -38,11 +38,11 @@ export default function EditDeck() {
             try {
                 const deckInfo = await updateDeck(deck, abortCon.signal);
                 history.push(`/decks/${deckInfo.id}`);
-            } catch (err) {
-                if (err.name === "AbortError") {
+            } catch (error) {
+                if (error.name === "AbortError") {
                     console.info("aborted");
                 } else {
-                    throw err;
+                    throw error;
                 };
             };
         };
