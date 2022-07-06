@@ -13,11 +13,11 @@ export default function CreateDeck() {
       try {
         const deckInfo = await createDeck(deck, abortCon.signal);
         history.push(`/decks/${deckInfo.id}`);
-      } catch (err) {
-        if (err.name === "AbortError") {
+      } catch (error) {
+        if (error.name === "AbortError") {
           console.info("aborted");
         } else {
-          throw err;
+          throw error;
         };
       };
     };
