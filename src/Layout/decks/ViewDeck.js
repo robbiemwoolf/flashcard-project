@@ -5,8 +5,6 @@ import classNames from "../../utils/class-names";
 import NotFound from "../NotFound";
 import CardList from "./CardList";
 
-//TODO: Skeleton cards before loading
-
 export default function ViewDeck() {
   const [deckInfo, setDeckInfo] = useState({});
   const { deckId } = useParams();
