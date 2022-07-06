@@ -10,15 +10,15 @@ export default function DeckLayout({ name, description, id, cards, handleDeleteD
           <div className='col text-right'><p className='card-subtitle'><small>{cards?.length} cards</small></p></div>
         </div>
         <p className='card-text'>{description}</p>
-        <div className='deck-card-buttons'>
-          <Link to={`/decks/${id}`} className='btn btn-secondary'>
+        <div className='d-flex'>
+          <Link to={`/decks/${id}`} className='btn btn-secondary mr-2 p-2'>
             <i className='bi bi-eye-fill'></i> View
           </Link>
-          <Link className='btn btn-primary mx-3' to={`/decks/${id}/study`}>
+          <Link className='btn btn-primary p-2' to={`/decks/${id}/study`}>
             <i className='bi bi-book'></i> Study
           </Link>
           <button
-            className='btn btn-danger delete-deck ml-5'
+            className='btn btn-danger delete-deck ml-auto p-2'
             onClick={() => handleDeleteDeck(id)}
           >
             <i className='bi bi-trash'></i>
