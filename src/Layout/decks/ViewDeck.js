@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useParams, useHistory, useRouteMatch } from "react-router-dom";
 import { readDeck, deleteDeck, deleteCard } from "../../utils/api";
-import classNames from "../../utils/class-names";
 import NotFound from "../NotFound";
 import CardList from "./CardList";
 
@@ -11,9 +10,6 @@ export default function ViewDeck() {
   const { name, description } = deckInfo;
   const { url } = useRouteMatch();
   const history = useHistory();
-
-  //Set placeholder for deck name before it's loaded
-  const navName = name ? name : "View Deck";
 
   //Loads deck information. If deck isn't found, display not found
   const getDeckDetails = useCallback(async () => {
@@ -64,51 +60,25 @@ export default function ViewDeck() {
             </Link>
           </li>
           <li className='breadcrumb-item active' aria-current='page'>
-            {navName}
+            {name}
           </li>
         </ol>
       </nav>
-      <h3 className={classNames({ "animated-bg animated-bg-text": !name })}>
-        {name}
-      </h3>
-      <p className={classNames({ "animated-bg animated-bg-text": !name })}>
-        {description}
-      </p>
-      <div className='deck-card-buttons'>
-        <Link
-          className={classNames({
-            btn: true,
-            "btn-secondary": true,
-            disabled: !name,
-          })}
-          to={`${url}/edit`}
-        >
+      <h3>{name}</h3>
+      <p>{description}</p>
+      <div className='d-flex'>
+        <Link className='btn btn-secondary mr-2 p-2' to={`${url}/edit`}>
           <i className='bi bi-pencil-fill'></i> Edit
         </Link>
-        <Link
-          className={classNames({
-            btn: true,
-            "btn-primary": true,
-            disabled: !name,
-          })}
-          to={`${url}/study`}
-        >
+        <Link className='btn btn-primary mr-2 p-2' to={`${url}/study`}>
           <i className='bi bi-book'></i> Study
         </Link>
-        <Link
-          className={classNames({
-            btn: true,
-            "btn-primary": true,
-            disabled: !name,
-          })}
-          to={`${url}/cards/new`}
-        >
+        <Link className='btn btn-primary p-2' to={`${url}/cards/new`}>
           <i className='bi bi-plus-lg'></i> Add Cards
         </Link>
         <button
-          className='btn btn-danger delete-deck'
+          className='btn btn-danger ml-auto p-2'
           onClick={handleDeleteDeck}
-          disabled={!name}
         >
           <i className='bi bi-trash'></i>
         </button>
