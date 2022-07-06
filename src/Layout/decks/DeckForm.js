@@ -2,17 +2,21 @@ import React, { useEffect, useState } from "react";
 
 export default function DeckForm({ handleSubmit, handleCancel, deck }) {
   const [deckInfo, setDeckInfo] = useState(deck);
+
   useEffect(() => {
     setDeckInfo(deck);
   }, [deck]);
+
   const updateForm = (event) => {
     const { name, value } = event.target;
     setDeckInfo({ ...deckInfo, [name]: value });
   };
+
   const submit = (event) => {
     event.preventDefault();
     handleSubmit(deckInfo);
   };
+
   return (
     <form onSubmit={submit}>
       <div className='form-group'>
@@ -48,4 +52,4 @@ export default function DeckForm({ handleSubmit, handleCancel, deck }) {
       </div>
     </form>
   );
-}
+};

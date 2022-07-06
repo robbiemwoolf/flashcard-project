@@ -38,8 +38,8 @@ export default function ViewDeck() {
     ) {
       await deleteCard(id);
       getDeckDetails();
-    }
-  }
+    };
+  };
 
   //Handle incorrect deckId
   if (name === "Not Found") return <NotFound />;
@@ -51,8 +51,8 @@ export default function ViewDeck() {
     ) {
       await deleteDeck(deckId);
       history.push("/");
-    }
-  }
+    };
+  };
 
   return (
     <div>
@@ -113,7 +113,6 @@ export default function ViewDeck() {
           <i className='bi bi-trash'></i>
         </button>
       </div>
-
       <CardList deck={deckInfo} deleteHandler={deleteHandler} />
     </div>
   );

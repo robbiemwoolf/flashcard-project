@@ -45,25 +45,25 @@ export default function AddCard() {
 
     return (
         <div>
-        <nav aria-label='breadcrumb'>
-            <ol className='breadcrumb'>
-            <li className='breadcrumb-item'>
-                <Link to='/'>
-                <i className='bi bi-house-door-fill'></i> Home
-                </Link>
-            </li>
-            <li className='breadcrumb-item'>
-                <Link to={`/decks/${deckId}`}>{deck.name}</Link>
-            </li>
-            <li className='breadcrumb-item active' aria-current='page'>
-                Add Card
-            </li>
-            </ol>
-        </nav>
-        <h1>{deck.name}: Add Card</h1>
-        {/* alert isn't required, hidden until functional, classNames() from utils will be the place start
-        <div className='card-toast alert alert-success d-none'>Card Added!</div> */}
-        <CardForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
+            <nav aria-label='breadcrumb'>
+                <ol className='breadcrumb'>
+                    <li className='breadcrumb-item'>
+                        <Link to='/'>
+                            <i className='bi bi-house-door-fill'></i> Home
+                        </Link>
+                    </li>
+                    <li className='breadcrumb-item'>
+                        <Link to={`/decks/${deckId}`}>{deck.name}</Link>
+                    </li>
+                    <li className='breadcrumb-item active' aria-current='page'>
+                        Add Card
+                    </li>
+                </ol>
+            </nav>
+            <h1>{deck.name}: Add Card</h1>
+            {/* alert isn't required, hidden until functional, classNames() from utils will be the place to start
+            <div className='card-toast alert alert-success d-none'>Card Added!</div> */}
+            <CardForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
         </div>
     );
 };

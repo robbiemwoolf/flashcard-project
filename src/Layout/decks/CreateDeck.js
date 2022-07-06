@@ -5,30 +5,33 @@ import { createDeck } from "../../utils/api/index";
 
 export default function CreateDeck() {
   const history = useHistory();
+
   function handleSubmit(deck) {
-    const abortController = new AbortController();
+    const abortCon = new AbortController();
 
     async function callCreateDeck() {
       try {
-        const deckInfo = await createDeck(deck, abortController.signal);
+        const deckInfo = await createDeck(deck, abortCon.signal);
         history.push(`/decks/${deckInfo.id}`);
       } catch (err) {
         if (err.name === "AbortError") {
           console.info("aborted");
         } else {
           throw err;
-        }
-      }
-    }
+        };
+      };
+    };
+
     callCreateDeck();
 
     return () => {
-      abortController.abort();
+      abortCon.abort();
     };
-  }
+  };
+
   function handleCancel() {
     history.push("/");
-  }
+  };
 
   return (
     <div>

@@ -53,4 +53,4 @@ export default function CardForm({ handleSubmit, handleCancel, card }) {
             </div>
         </form>
     );
-}
+};
