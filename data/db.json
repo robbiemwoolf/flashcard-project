@@ -12,7 +12,7 @@
     },
     {
       "name": "Practice Deck",
-      "description": "This a deck to show that the create deck functionality is working correctly.",
+      "description": "This a deck to show that the create deck functionality is working correctly. Now checking the edit deck functionality",
       "id": 3
     }
   ],
