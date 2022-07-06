@@ -61,7 +61,7 @@ export default function AddCard() {
             </ol>
         </nav>
         <h1>{deck.name}: Add Card</h1>
-        <div className='card-toast alert alert-success hidden'>Card Added!</div>
+        <div className='card-toast alert alert-success d-none'>Card Added!</div>
         <CardForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
         </div>
     );
