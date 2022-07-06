@@ -11,7 +11,7 @@ export default function CardLayout({ handleNext, deck = { cards: [] }, cardId = 
 
     const nextButton = !side ? (
         <button
-            className='btn btn-primary btn-next'
+            className='btn btn-primary'
             onClick={() => {
                 setSide(true);
                 handleNext();
@@ -22,13 +22,13 @@ export default function CardLayout({ handleNext, deck = { cards: [] }, cardId = 
     ) : ("");
 
     return (
-        <div className='card my-1 front'>
-            <div>
+        <div className='card my-1'>
+            <div className='p-2'>
                 <h5 className='card-title'>
                     Card {cardId + 1} of {cards.length}
                 </h5>
                 <p className='card-text'>{ side ? card.front : card.back }</p>
-                <button className='btn btn-secondary' onClick={flipCard}>
+                <button className='btn btn-secondary mr-2' onClick={flipCard}>
                     Flip
                 </button>
                 {nextButton}
