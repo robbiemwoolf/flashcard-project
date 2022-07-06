@@ -61,8 +61,6 @@ export default function AddCard() {
                 </ol>
             </nav>
             <h1>{deck.name}: Add Card</h1>
-            {/* use helper function classNames to remove d-none when save button is clicked and add d-none when typing of new card begins */}
-            <div className='alert alert-success d-none'>Card Added!</div>
             <CardForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
         </div>
     );
