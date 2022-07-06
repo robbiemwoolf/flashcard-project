@@ -28,7 +28,7 @@ export default function Home() {
         }
         loadDecks();
         return () => {
-            console.linfo("aborting");
+            console.info("aborting");
             abortCon.abort();
         }
     }, []);
