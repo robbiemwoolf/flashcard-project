@@ -18,7 +18,7 @@ export default function CardDetails({ id, front, back, deckId, deleteHandler }) 
             <i className='bi bi-pencil-fill'></i> Edit
           </Link>
           <button
-            className='btn btn-danger delete-deck'
+            className='btn btn-danger ml-2'
             onClick={() => deleteHandler(id)}
           >
             <i className='bi bi-trash'></i>
