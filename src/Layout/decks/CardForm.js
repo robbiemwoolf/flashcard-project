@@ -44,7 +44,7 @@ export default function CardForm({ handleSubmit, handleCancel, card }) {
                     onChange={updateForm}
                     required
                 ></textarea>
-                <button className='btn btn-secondary my-2' onClick={handleCancel}>
+                <button className='btn btn-secondary my-2 mr-2' onClick={handleCancel}>
                     Done
                 </button>
                 <button type='submit' className='btn btn-primary my-2'>
