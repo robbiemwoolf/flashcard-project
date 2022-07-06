@@ -3,10 +3,10 @@ import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import NotFound from "../NotFound";
 // import EditDeck from "./EditDeck";
-// import EditCard from "./EditCard";
 import Study from "./Study";
 import ViewDeck from "./ViewDeck";
 import AddCard from "./AddCard";
+import EditCard from "./EditCard";
 
 export default function DeckRoutes() {
     const { url } = useRouteMatch();
@@ -25,10 +25,9 @@ export default function DeckRoutes() {
             <Route path={"/decks/:deckId/cards/new"} exact={true}>
                 <AddCard />
             </Route>
-            {/*
             <Route path={"/decks/:deckId/cards/:cardId/edit"}>
                 <EditCard />
-            </Route> */}
+            </Route>
             <Route path={url}>
                 <NotFound />
             </Route>
