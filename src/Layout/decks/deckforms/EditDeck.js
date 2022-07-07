@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import DeckForm from "./DeckForm";
-import { readDeck, updateDeck } from "../../utils/api/index";
+import { readDeck, updateDeck } from "../../../utils/api/index";
+import Breadcrumb from "./EditBC";
 
 export default function EditDeck() {
     const history = useHistory();
@@ -24,7 +25,7 @@ export default function EditDeck() {
                     throw error;
                 };
             };
-        }
+        };
 
         loadDeck();
 
@@ -60,21 +61,7 @@ export default function EditDeck() {
 
     return (
         <div>
-            <nav aria-label='breadcrumb'>
-                <ol className='breadcrumb'>
-                    <li className='breadcrumb-item'>
-                        <Link to='/'>
-                            <i className='bi bi-house-door-fill'></i> Home
-                        </Link>
-                    </li>
-                    <li className='breadcrumb-item'>
-                        <Link to={`/decks/${deckId}`}>{name}</Link>
-                    </li>
-                    <li className='breadcrumb-item active' aria-current='page'>
-                        Edit Deck
-                    </li>
-                </ol>
-            </nav>
+            <Breadcrumb deckId={deckId} name={name} />
             <h1>Edit Deck</h1>
             <DeckForm
                 handleSubmit={handleSubmit}

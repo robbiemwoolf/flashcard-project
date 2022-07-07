@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import DeckForm from "./DeckForm";
-import { createDeck } from "../../utils/api/index";
+import { createDeck } from "../../../utils/api/index";
+import Breadcrumb from "./CreateBC";
 
 export default function CreateDeck() {
   const history = useHistory();
@@ -35,18 +36,7 @@ export default function CreateDeck() {
 
   return (
     <div>
-      <nav aria-label='breadcrumb'>
-        <ol className='breadcrumb'>
-          <li className='breadcrumb-item'>
-            <Link to='/'>
-              <i className='bi bi-house-door-fill'></i> Home
-            </Link>
-          </li>
-          <li className='breadcrumb-item active' aria-current='page'>
-            Create Deck
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb />
       <h1>Create Deck</h1>
       <DeckForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
     </div>
