@@ -7,7 +7,7 @@ export default function DeckLayout({ name, description, id, cards, handleDeleteD
       <div className='card-body'>
         <div className='row'>
           <div className='col'><h5 className='card-title '>{name}</h5></div>
-          <div className='col text-right'><p className='card-subtitle'><small>{cards?.length} cards</small></p></div>
+          <div className='col text-right'><p className='card-subtitle'><small>{cards.length} cards</small></p></div>
         </div>
         <p className='card-text'>{description}</p>
         <div className='d-flex'>

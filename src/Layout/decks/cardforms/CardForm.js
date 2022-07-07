@@ -28,7 +28,7 @@ export default function CardForm({ handleSubmit, handleCancel, card }) {
                     id='front'
                     name='front'
                     placeholder='Front side of card'
-                    value={cardInfo?.front || ""}
+                    value={cardInfo.front || ""}
                     onChange={updateForm}
                     required
                 ></textarea>
@@ -40,7 +40,7 @@ export default function CardForm({ handleSubmit, handleCancel, card }) {
                     name='back'
                     id='back'
                     placeholder='Back side of card'
-                    value={cardInfo?.back || ""}
+                    value={cardInfo.back || ""}
                     onChange={updateForm}
                     required
                 ></textarea>
