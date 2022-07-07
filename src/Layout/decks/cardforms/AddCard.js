@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import CardForm from "./CardForm";
-import { createCard, readDeck } from "../../utils/api/index";
+import { createCard, readDeck } from "../../../utils/api/index";
+import Breadcrumb from "./AddBC";
 
 export default function AddCard() {
     const history = useHistory();
@@ -45,21 +46,7 @@ export default function AddCard() {
 
     return (
         <div>
-            <nav aria-label='breadcrumb'>
-                <ol className='breadcrumb'>
-                    <li className='breadcrumb-item'>
-                        <Link to='/'>
-                            <i className='bi bi-house-door-fill'></i> Home
-                        </Link>
-                    </li>
-                    <li className='breadcrumb-item'>
-                        <Link to={`/decks/${deckId}`}>{deck.name}</Link>
-                    </li>
-                    <li className='breadcrumb-item active' aria-current='page'>
-                        Add Card
-                    </li>
-                </ol>
-            </nav>
+            <Breadcrumb deckId={deckId} deck={deck} />
             <h1>{deck.name}: Add Card</h1>
             <CardForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
         </div>

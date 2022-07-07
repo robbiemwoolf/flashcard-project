@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Home from "./home/Home";
-import CreateDeck from "./decks/CreateDeck";
+import CreateDeck from "./decks/deckforms/CreateDeck";
 import DeckRoutes from "./decks/DeckRoutes";
 
 function Layout() {

@@ -4,9 +4,9 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import NotFound from "../NotFound";
 import Study from "./Study";
 import ViewDeck from "./ViewDeck";
-import AddCard from "./AddCard";
-import EditCard from "./EditCard";
-import EditDeck from "./EditDeck";
+import AddCard from "./cardforms/AddCard";
+import EditCard from "./cardforms/EditCard";
+import EditDeck from "./deckforms/EditDeck";
 
 export default function DeckRoutes() {
     const { url } = useRouteMatch();

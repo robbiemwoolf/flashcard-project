@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import CardLayout from './CardLayout';
 import { readDeck } from "../../utils/api/index";
 import NotEnough from "./NotEnough";
+import Breadcrumb from "./StudyBC";
 
-export default function StudyDeck() {
+export default function Study() {
     const history = useHistory();
     const { deckId } = useParams();
     const [deck, setDeck] = useState({ cards: [] });
@@ -54,21 +55,7 @@ export default function StudyDeck() {
 
     return (
       <div>
-        <nav aria-label='breadcrumb'>
-          <ol className='breadcrumb'>
-            <li className='breadcrumb-item'>
-              <Link to='/'>
-                <i className='bi bi-house-door-fill'></i> Home
-              </Link>
-            </li>
-            <li className='breadcrumb-item'>
-              <Link to={`/decks/${deckId}`}>{name}</Link>
-            </li>
-            <li className='breadcrumb-item active' aria-current='page'>
-              Study
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb deckId={deckId} name={name} />
         <h1>{name}: Study</h1>
         {content}
       </div>

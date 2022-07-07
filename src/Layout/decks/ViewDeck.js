@@ -3,6 +3,7 @@ import { Link, useParams, useHistory, useRouteMatch } from "react-router-dom";
 import { readDeck, deleteDeck, deleteCard } from "../../utils/api";
 import NotFound from "../NotFound";
 import CardList from "./CardList";
+import Breadcrumb from "./ViewBC";
 
 export default function ViewDeck() {
   const [deckInfo, setDeckInfo] = useState({});
@@ -52,18 +53,7 @@ export default function ViewDeck() {
 
   return (
     <div>
-      <nav aria-label='breadcrumb'>
-        <ol className='breadcrumb'>
-          <li className='breadcrumb-item'>
-            <Link to='/'>
-              <i className='bi bi-house-door-fill'></i> Home
-            </Link>
-          </li>
-          <li className='breadcrumb-item active' aria-current='page'>
-            {name}
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb name={name} />
       <h3>{name}</h3>
       <p>{description}</p>
       <div className='d-flex'>
