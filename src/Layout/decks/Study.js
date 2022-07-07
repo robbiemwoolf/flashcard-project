@@ -47,7 +47,7 @@ export default function Study() {
       };
     };
 
-    const content = deck.cards.length > 2 ? (
+    const content = deck?.cards?.length > 2 ? (
       <CardLayout handleNext={handleNext} deck={deck} cardId={cardId} />
     ) : (
       <NotEnough deck={deck} />
